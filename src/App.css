@@ -1,0 +1,44 @@
+/* Cursor glow effect */
+.cursor-glow {
+  position: fixed;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(99,179,237,0.055) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  transition: left 0.08s linear, top 0.08s linear;
+  will-change: left, top;
+}
+
+@media (hover: none) {
+  .cursor-glow { display: none; }
+}
+
+/* Section dividers */
+.section-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 28px;
+  position: relative;
+  z-index: 1;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.section-divider__line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
+
+.section-divider__dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--border-2);
+  flex-shrink: 0;
+}

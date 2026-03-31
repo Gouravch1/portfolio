@@ -1,0 +1,135 @@
+.certs { }
+
+.certs__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.certs__list { display: flex; flex-direction: column; gap: 14px; }
+
+.cert-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 18px 22px;
+  transition: all 0.3s var(--ease);
+  opacity: 0;
+  transform: translateX(28px);
+  cursor: default;
+}
+
+.cert-row.visible { opacity: 1; transform: translateX(0); }
+.cert-row:hover { border-color: var(--border-2); background: var(--surface-2); transform: translateX(-5px); }
+
+.cert-row__icon {
+  width: 46px; height: 46px;
+  border-radius: var(--r-md);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.cert-row__icon--green { background: rgba(104,211,145,0.1); border: 1px solid rgba(104,211,145,0.2); }
+.cert-row__icon--amber { background: rgba(246,173,85,0.1); border: 1px solid rgba(246,173,85,0.2); }
+.cert-row__icon--cyan { background: var(--cyan-dim); border: 1px solid rgba(99,179,237,0.2); }
+
+.cert-row__info { flex: 1; }
+.cert-row__name { font-weight: 700; font-size: 14.5px; color: var(--text-1); margin-bottom: 3px; }
+.cert-row__issuer { font-family: var(--ff-mono); font-size: 11px; color: var(--text-3); letter-spacing: 0.04em; }
+
+.cert-row__arrow { color: var(--text-4); font-size: 16px; transition: all 0.25s var(--ease); }
+.cert-row:hover .cert-row__arrow { color: var(--cyan); transform: translate(3px, -3px); }
+
+/* Right — Learning card */
+.certs__right { display: flex; flex-direction: column; gap: 18px; }
+
+.certs__now {
+  background: linear-gradient(135deg, rgba(99,179,237,0.07), rgba(183,148,244,0.05));
+  border: 1px solid rgba(99,179,237,0.18);
+  border-radius: var(--r-xl);
+  padding: 30px;
+}
+
+.certs__now-label {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.certs__now-label span {
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--emerald);
+  animation: pulse-ring 1.5s ease-out infinite;
+}
+
+.certs__now-title {
+  font-family: var(--ff-display);
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text-1);
+  margin-bottom: 10px;
+}
+
+.certs__now-body {
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.8;
+}
+
+.certs__roadmap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 22px 24px;
+}
+
+.certs__roadmap-label {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-4);
+  margin-bottom: 16px;
+}
+
+.certs__roadmap-steps { display: flex; flex-direction: column; gap: 10px; }
+
+.rm-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--text-2);
+}
+
+.rm-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.rm-dot--done { background: var(--emerald); box-shadow: 0 0 8px rgba(104,211,145,0.4); }
+.rm-dot--active { background: var(--cyan); box-shadow: 0 0 8px rgba(99,179,237,0.5); animation: pulse-ring 1.5s ease-out infinite; }
+.rm-dot--todo { background: var(--border-2); }
+
+.rm-step--done { color: var(--text-2); }
+.rm-step--active { color: var(--text-1); font-weight: 600; }
+.rm-step--todo { color: var(--text-3); }
+
+@media (max-width: 880px) {
+  .certs__layout { grid-template-columns: 1fr; gap: 50px; }
+}

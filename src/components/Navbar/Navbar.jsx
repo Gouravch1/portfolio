@@ -33,7 +33,7 @@ export default function Navbar() {
         <div className="nav__logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
           <div className="nav__logo-mark">GD</div>
           <div>
-            <div className="nav__logo-text">Gourav Dey</div>
+            <div className="nav__logo-text">Gourav Chandra Dey</div>
             <div className="nav__logo-sub">Backend Engineer</div>
           </div>
         </div>
